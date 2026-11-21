@@ -37,6 +37,7 @@
   --marigold: #E3A13B;
   --marigold-soft: #F6DFB4;
   --sage: #4A6B53;
+  --teal: #3D6E79;
   --on-accent: #FFF6EC;
   --glow-1: rgb(227 161 59 / .26);
   --glow-2: rgb(210 95 51 / .16);
@@ -83,6 +84,7 @@
   --marigold: #F2BC5E;
   --marigold-soft: #5A4220;
   --sage: #94BE9C;
+  --teal: #8CC4CE;
   --on-accent: #1B1410;
   --glow-1: rgb(242 188 94 / .12);
   --glow-2: rgb(240 138 93 / .10);
@@ -1069,6 +1071,7 @@ html:not(.js) .squiggle path { stroke-dashoffset: 0; animation: none; }
 .flow__node--transform { --stage: var(--marigold); }
 .flow__node--store { --stage: var(--accent); }
 .flow__node--serve { --stage: var(--ink); }
+.flow__node--ai { --stage: var(--teal); }
 .flow__stage {
   display: flex;
   align-items: center;

@@ -362,6 +362,7 @@
         ['SELECT title, start_date FROM experience ORDER BY start_date;', 'sort'],
         ['SELECT metric, value FROM impact WHERE value > 50;', 'compare numbers'],
         ['SELECT COUNT(*) FROM skills;', 'aggregate'],
+        ['SELECT feature, what_it_does FROM ai_features;', 'the GenAI bits'],
         ['SELECT * FROM contact;', 'say hello'],
         ['\\x', 'toggle expanded display'],
         ['clear', 'clear the screen'],

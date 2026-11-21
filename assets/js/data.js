@@ -26,7 +26,7 @@ window.RESUME_DB = {
     description: 'Selected case studies (clients kept confidential)',
     columns: ['name', 'client', 'role', 'highlight'],
     rows: [
-      ['Global Data Center Supply Chain Analytics', 'MAANG technology company', 'Analytics consultant', 'spreadsheets -> real-time KPI dashboards'],
+      ['Global Data Center Supply Chain Analytics', 'MAANG technology company', 'Analytics consultant', 'real-time KPI dashboards with an AI chatbot + AI insights'],
       ['Enterprise Analytics: Functional & QA', 'Global heavy-equipment manufacturer', 'Functional & QA consultant', 'defects resolved across 15 analytics screens'],
       ['Enterprise Data Integration & Migration', 'Fortune Global 100 PC & printing company', 'Data engineer', '100M+ records migrated, ETL 70% faster'],
     ],
@@ -63,6 +63,10 @@ window.RESUME_DB = {
       ['Pipelines', 'Web data extraction'],
       ['Visualization', 'Power BI'],
       ['Visualization', 'Tableau'],
+      ['Generative AI', 'AI chatbots'],
+      ['Generative AI', 'Prompt engineering'],
+      ['Generative AI', 'Reusable prompt templates'],
+      ['Generative AI', 'AI chart insights'],
       ['Quality', 'Data quality & integrity'],
       ['Quality', 'Data governance'],
       ['Quality', 'Selenium'],
@@ -83,6 +87,15 @@ window.RESUME_DB = {
       ['Power BI dashboards', '10+', 'built to client needs'],
       ['Analytics screens QA-ed', '15', 'defects fixed for release readiness'],
       ['Data sources integrated', '5+', 'Adobe, Google & Baidu Analytics, PostgreSQL, SQL Server, Excel'],
+    ],
+  },
+
+  ai_features: {
+    description: 'Generative AI I shipped inside dashboards',
+    columns: ['feature', 'what_it_does', 'how'],
+    rows: [
+      ['AI chatbot', 'answers questions about the data and the dashboard', 'integrated into the dashboard'],
+      ['AI chart insights', 'explains what each chart shows', 'one reusable prompt template across many charts'],
     ],
   },
 
@@ -107,4 +120,4 @@ window.RESUME_DB = {
 };
 
 /* Friendly aliases, so `SELECT * FROM me;` just works. */
-window.RESUME_DB_ALIASES = { me: 'engineers', whoami: 'engineers', jobs: 'experience', work: 'experience', skill: 'skills' };
+window.RESUME_DB_ALIASES = { me: 'engineers', whoami: 'engineers', jobs: 'experience', work: 'experience', skill: 'skills', ai: 'ai_features' };
