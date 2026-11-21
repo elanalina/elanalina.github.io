@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Elanaliina Elanchezhiyan — Senior Data Engineer</title>
+  <meta name="description" content="Senior data engineer building SQL &amp; Python ETL pipelines, large data migrations and dashboards teams can trust. 70% faster ETL, 100M+ records migrated with 100% integrity.">
+  <meta name="author" content="Elanaliina Elanchezhiyan">
+  <link rel="canonical" href="https://elanalina.github.io/">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F7F0E6">
+
+  <!-- Social previews -->
+  <meta property="og:type" content="profile">
+  <meta property="profile:first_name" content="Elanaliina">
+  <meta property="profile:last_name" content="Elanchezhiyan">
+  <meta property="og:site_name" content="Elanaliina Elanchezhiyan">
+  <meta property="og:url" content="https://elanalina.github.io/">
+  <meta property="og:title" content="Elanaliina Elanchezhiyan — Senior Data Engineer">
+  <meta property="og:description" content="I turn messy, multi-source data into fast pipelines and dashboards teams can trust. Come query my résumé in SQL.">
+  <meta property="og:image" content="https://elanalina.github.io/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elanaliina Elanchezhiyan, Senior Data Engineer, next to a SQL console querying a résumé">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Elanaliina Elanchezhiyan — Senior Data Engineer">
+  <meta name="twitter:description" content="I turn messy, multi-source data into fast pipelines and dashboards teams can trust. Come query my résumé in SQL.">
+  <meta name="twitter:image" content="https://elanalina.github.io/assets/img/og-image.jpg">
+
+  <link rel="icon" href="assets/img/favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..800,0..100,0..1;1,9..144,300..800,0..100,0..1&amp;family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&amp;family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,300..500,0..1,0&amp;icon_names=arrow_downward,arrow_outward,check,close,content_copy,dark_mode,database,keyboard_return,light_mode,mail,menu,search&amp;display=block">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <script>
+    /* Pick the theme before first paint: ?theme= param, then saved choice, then the OS setting. */
+    (function () {
+      var root = document.documentElement, theme;
+      try {
+        theme = new URLSearchParams(location.search).get('theme') || localStorage.getItem('theme');
+      } catch (e) {}
+      if (theme !== 'dark' && theme !== 'light') {
+        theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      root.setAttribute('data-theme', theme);
+      root.classList.add('js');
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Elanaliina Elanchezhiyan",
+    "jobTitle": "Senior Data Engineer",
+    "url": "https://elanalina.github.io/",
+    "image": "https://elanalina.github.io/assets/img/elanaliina.jpg",
+    "worksFor": { "@type": "Organization", "name": "Accenture" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "SASTRA Deemed University" },
+      { "@type": "CollegeOrUniversity", "name": "Alagappa University" }
+    ],
+    "knowsAbout": ["Data engineering", "SQL", "Python", "ETL", "PostgreSQL", "BigQuery", "Power BI", "Data quality", "Machine learning", "Generative AI"],
+    "sameAs": ["https://www.linkedin.com/in/ela-naliina-lakshmi/", "https://github.com/elanalina"]
+  }
+  </script>
+
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/sql.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============================== Header ============================== -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Elanaliina Elanchezhiyan, back to top">
+        <span class="brand__mark" aria-hidden="true">e</span>
+        <span class="brand__name" aria-hidden="true">elanaliina<span class="brand__dot">.</span></span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="kbd-btn" id="palette-open" type="button" aria-label="Open command palette" aria-haspopup="dialog">
+          <span class="ms" aria-hidden="true">search</span>
+          <kbd class="kbd-hint">⌘K</kbd>
+        </button>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <span class="ms theme-icon theme-icon--dark" aria-hidden="true">dark_mode</span>
+          <span class="ms theme-icon theme-icon--light" aria-hidden="true">light_mode</span>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+          <span class="ms" aria-hidden="true">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================== Hero ============================== -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__grid">
+        <div class="hero__intro">
+          <p class="hero__hello reveal">
+            <img class="hero__avatar" src="assets/img/elanaliina.jpg" alt="" width="44" height="44">
+            <span>Hi, I'm</span>
+          </p>
+          <h1 class="hero__title reveal" id="hero-title" style="--d: .08s">
+            <span class="hero__first">Elanaliina</span>
+            <span class="hero__last">Elanchezhiyan<span class="accent-dot">.</span></span>
+          </h1>
+          <p class="hero__lede reveal" style="--d: .16s">
+            A senior data engineer who turns messy, multi-source data into fast pipelines and dashboards that teams can
+            <span class="squiggle">trust<svg viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M2 8.5 C 14 3, 24 3, 36 7.5 S 60 11.5, 72 6.5 S 92 2.5, 98 6"/></svg></span>.
+          </p>
+          <p class="hero__meta reveal" style="--d: .22s">
+            <span>Senior Data Engineer</span><span aria-hidden="true">/</span><span>MAANG contractor</span><span aria-hidden="true">/</span><span>ML practitioner</span><span aria-hidden="true">/</span><span>Generative AI explorer</span>
+          </p>
+          <div class="hero__cta reveal" style="--d: .28s">
+            <a class="btn btn--primary" href="#projects">See my work <span class="ms" aria-hidden="true">arrow_downward</span></a>
+            <a class="btn btn--ghost" href="#contact">Get in touch</a>
+          </div>
+        </div>
+
+        <div class="hero__console reveal" style="--d: .2s">
+          <div class="console-stage">
+            <div class="console" id="console">
+              <div class="console__bar">
+                <span class="console__title"><span class="ms" aria-hidden="true">database</span>resume.db</span>
+                <span class="console__tag">read-only</span>
+              </div>
+              <div class="console__screen" id="console-screen" role="region" aria-label="SQL console output" tabindex="0">
+                <!-- Static fallback, replaced by an interactive console when JavaScript runs. -->
+                <div class="cecho">
+                  <div class="cline"><span class="cps">resume=&gt;</span><code class="ccode"><span class="tok-kw">SELECT</span> name, role, superpower</code></div>
+                  <div class="cline"><span class="cps">resume-&gt;</span><code class="ccode">  <span class="tok-kw">FROM</span> engineers</code></div>
+                  <div class="cline"><span class="cps">resume-&gt;</span><code class="ccode"> <span class="tok-kw">WHERE</span> handle <span class="tok-punct">=</span> <span class="tok-str">'elanalina'</span><span class="tok-punct">;</span></code></div>
+                </div>
+                <div class="cresult">
+                  <div class="cresult__scroll">
+                    <table class="ctable ctable--x">
+                      <caption>-[ RECORD 1 ]-</caption>
+                      <tbody>
+                        <tr><th scope="row">name</th><td>Elanaliina Elanchezhiyan</td></tr>
+                        <tr><th scope="row">role</th><td>Senior Data Engineer</td></tr>
+                        <tr><th scope="row">superpower</th><td>making slow queries fast</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="cfoot">(1 row)</div>
+                </div>
+              </div>
+              <form class="console__prompt" id="console-form" autocomplete="off">
+                <label class="sr-only" for="console-input">Type a SQL query about my résumé</label>
+                <span class="cps" aria-hidden="true">resume=&gt;</span>
+                <input id="console-input" name="q" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" enterkeyhint="go" placeholder="SELECT * FROM skills;">
+                <button class="console__run" type="submit" aria-label="Run query"><span class="ms" aria-hidden="true">keyboard_return</span></button>
+              </form>
+              <p class="sr-only" id="console-status" aria-live="polite"></p>
+            </div>
+          </div>
+          <div class="console-chips">
+            <span class="console-chips__label">Try a query:</span>
+            <button class="chip" type="button" data-query="SELECT * FROM skills WHERE category = 'Databases';">skills</button>
+            <button class="chip" type="button" data-query="SELECT title, company, start_date FROM experience ORDER BY start_date DESC;">experience</button>
+            <button class="chip" type="button" data-query="SELECT metric, value FROM impact WHERE value > 50;">impact</button>
+            <button class="chip" type="button" data-query="SELECT degree, school FROM education;">education</button>
+            <button class="chip" type="button" data-query="\dt">\dt</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== Impact ============================== -->
+    <section class="impact" aria-label="Impact in numbers">
+      <div class="container">
+        <ul class="impact__grid">
+          <li class="impact__item reveal">
+            <span class="impact__num"><span data-count="70">70</span><small>%</small></span>
+            <span class="impact__label">faster ETL runs</span>
+            <span class="impact__ctx">8.5 h → 2 h with indexing, partitioning and query tuning</span>
+          </li>
+          <li class="impact__item reveal" style="--d: .08s">
+            <span class="impact__num"><span data-count="100">100</span><small>M+</small></span>
+            <span class="impact__label">records migrated</span>
+            <span class="impact__ctx">SQL Server → PostgreSQL with 100% data integrity</span>
+          </li>
+          <li class="impact__item reveal" style="--d: .16s">
+            <span class="impact__num"><span data-count="99.9">99.9</span><small>%</small></span>
+            <span class="impact__label">data integrity</span>
+            <span class="impact__ctx">across Azure Data Factory pipelines</span>
+          </li>
+          <li class="impact__item reveal" style="--d: .24s">
+            <span class="impact__num"><span data-count="50">50</span><small>+</small></span>
+            <span class="impact__label">scripts optimized</span>
+            <span class="impact__ctx">reviewed and tuned for performance</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================== About ============================== -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container about__grid">
+        <div class="about__portrait reveal">
+          <figure class="portrait">
+            <div class="portrait__frame">
+              <img src="assets/img/elanaliina.jpg" alt="Portrait of Elanaliina Elanchezhiyan" width="524" height="523" loading="lazy" decoding="async">
+            </div>
+            <figcaption class="portrait__caption"><code><span class="tok-kw">SELECT</span> photo <span class="tok-kw">FROM</span> me<span class="tok-punct">;</span></code></figcaption>
+          </figure>
+        </div>
+
+        <div class="about__content">
+          <p class="eyebrow reveal"><span>01</span>About</p>
+          <h2 class="section-title reveal" id="about-title">I make data <em>dependable</em>.</h2>
+          <div class="prose reveal">
+            <p>I'm a data engineer who cares about the parts of data work everything else depends on: clean schemas, well-tested transformations, and queries that finish in minutes, not hours.</p>
+            <p>Since 2021 I've been with <strong>Accenture</strong>, building analytics for some of the world's largest companies: a MAANG technology company, a Fortune Global 100 PC &amp; printing company and a global heavy-equipment manufacturer. Day to day that means SQL and Python ETL, APIs, large data migrations, automated data-quality checks and dashboards people actually use.</p>
+            <p>I studied Computer Science &amp; Engineering at SASTRA, added an MBA along the way, and lately I've been going deeper into machine learning and generative AI.</p>
+          </div>
+
+          <div class="toolkit reveal">
+            <h3 class="mini-title">Toolkit</h3>
+            <dl class="toolkit__list">
+              <div class="toolkit__row">
+                <dt>SQL craft</dt>
+                <dd><ul class="chips"><li>Complex queries</li><li>Window functions</li><li>CTEs</li><li>Indexing</li><li>Query optimization</li><li>Stored procedures</li><li>Views &amp; functions</li></ul></dd>
+              </div>
+              <div class="toolkit__row">
+                <dt>Languages</dt>
+                <dd><ul class="chips"><li>SQL</li><li>Python</li><li>pandas</li><li>NumPy</li><li>SQLAlchemy</li><li>pyodbc</li><li>psycopg2</li><li>requests</li></ul></dd>
+              </div>
+              <div class="toolkit__row">
+                <dt>Databases</dt>
+                <dd><ul class="chips"><li>BigQuery</li><li>PostgreSQL</li><li>SQL Server</li><li>MySQL</li><li>Snowflake</li><li>Oracle DB</li></ul></dd>
+              </div>
+              <div class="toolkit__row">
+                <dt>Pipelines</dt>
+                <dd><ul class="chips"><li>ETL workflows</li><li>APIs</li><li>Azure Data Factory</li><li>Azure Data Lake Storage</li><li>Web data extraction</li></ul></dd>
+              </div>
+              <div class="toolkit__row">
+                <dt>Visualization</dt>
+                <dd><ul class="chips"><li>Power BI</li><li>Tableau</li><li>Internal BI platforms</li></ul></dd>
+              </div>
+              <div class="toolkit__row">
+                <dt>Quality &amp; delivery</dt>
+                <dd><ul class="chips"><li>Data quality &amp; integrity</li><li>Data governance</li><li>Selenium</li><li>Robot Framework</li><li>Azure DevOps</li></ul></dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="education reveal">
+            <h3 class="mini-title">Education</h3>
+            <ul class="edu">
+              <li>
+                <span class="edu__years">2022 – 2024</span>
+                <span class="edu__degree">MBA, Human Resource Management</span>
+                <span class="edu__school">Alagappa University · Tamil Nadu, India</span>
+              </li>
+              <li>
+                <span class="edu__years">2017 – 2021</span>
+                <span class="edu__degree">B.Tech, Computer Science &amp; Engineering</span>
+                <span class="edu__school">SASTRA Deemed University · Tamil Nadu, India</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== Experience ============================== -->
+    <section class="section experience" id="experience" aria-labelledby="experience-title">
+      <div class="container split">
+        <header class="split__head">
+          <p class="eyebrow reveal"><span>02</span>Experience</p>
+          <h2 class="section-title reveal" id="experience-title">Making data <em>flow</em> since 2021.</h2>
+          <p class="section-lede reveal">From an analytics internship to owning ETL, migration and data-quality work for global clients, all within the Accenture family.</p>
+        </header>
+
+        <ol class="timeline">
+          <li class="job job--current reveal">
+            <span class="job__node" aria-hidden="true"></span>
+            <p class="job__when"><time datetime="2025-05">May 2025</time><span aria-hidden="true">→</span><span class="job__now">Present</span></p>
+            <h3 class="job__title">Data Engineering Senior Analyst</h3>
+            <p class="job__org">Accenture</p>
+            <ul class="job__points">
+              <li>Build APIs and SQL/Python ETL workflows that integrate data from multiple sources, and migrate records between systems.</li>
+              <li>Design SQL tables, automate refresh workflows and develop dashboards in internal visualization tools.</li>
+              <li>Automate functional and regression tests with Selenium in Robot Framework, alongside manual QA.</li>
+              <li>Validate large datasets with SQL, Python and Excel, resolving <span class="hl">95%+ of discrepancies</span>, and have reviewed and optimized <span class="hl">50+ scripts</span> for performance.</li>
+            </ul>
+            <p class="job__stack">SQL · Python · APIs · Selenium · Robot Framework</p>
+          </li>
+
+          <li class="job reveal">
+            <span class="job__node" aria-hidden="true"></span>
+            <p class="job__when"><time datetime="2021-08">Aug 2021</time><span aria-hidden="true">→</span><time datetime="2025-04">Apr 2025</time></p>
+            <h3 class="job__title">Data Analyst</h3>
+            <p class="job__org">Accenture</p>
+            <ul class="job__points">
+              <li>Developed PostgreSQL tables, views, stored procedures and complex joins that improved data quality and processing efficiency.</li>
+              <li>Created <span class="hl">10+ Power BI dashboards</span> tailored to client needs, making reporting faster and more insightful.</li>
+              <li>Managed Azure Data Factory pipelines and Data Lake Storage with <span class="hl">99.9% data integrity</span>.</li>
+            </ul>
+            <p class="job__stack">PostgreSQL · Power BI · Azure Data Factory · Data Lake Storage</p>
+          </li>
+
+          <li class="job reveal">
+            <span class="job__node" aria-hidden="true"></span>
+            <p class="job__when"><time datetime="2021-02">Feb 2021</time><span aria-hidden="true">→</span><time datetime="2021-08">Aug 2021</time></p>
+            <h3 class="job__title">Business Analyst Intern</h3>
+            <p class="job__org">Bridgei2i Analytics Solutions <span class="job__aside">(now part of Accenture)</span></p>
+            <ul class="job__points">
+              <li>Built dynamic SQL calculations with variables to surface KPI trends.</li>
+              <li>Cleaned and transformed <span class="hl">100K+ rows</span> of structured data in Excel for reporting and insights.</li>
+              <li>Built foundations in Python, SQL, statistics and business visualization, and delivered a case-study presentation.</li>
+            </ul>
+            <p class="job__stack">SQL · Excel · Python · Statistics</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================== Projects ============================== -->
+    <section class="section projects" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow reveal"><span>03</span>Projects &amp; portfolio</p>
+          <h2 class="section-title reveal" id="projects-title">Selected <em>case studies</em>.</h2>
+          <p class="section-lede reveal">Client names stay confidential. The pipelines, the problems and the results are real.</p>
+        </header>
+
+        <div class="cases">
+          <!-- Case 01 -->
+          <article class="case reveal" aria-labelledby="case-1-title">
+            <span class="case__index" aria-hidden="true">01</span>
+            <div class="case__text">
+              <p class="case__client">MAANG technology company</p>
+              <h3 class="case__title" id="case-1-title">Global Data Center Supply Chain Analytics</h3>
+              <p class="case__role">Role · Analytics consultant</p>
+              <p class="case__summary">Analytics for global data center operations: SQL models with complex metric logic, automated refreshes and interactive dashboards that replaced spreadsheet-based reporting.</p>
+              <ul class="case__outcomes">
+                <li>Designed SQL scripts to build tables and complex metric calculations, including <span class="hl">cumulative metrics via array functions</span>.</li>
+                <li>Automated data refresh workflows on <span class="hl">week-on-week snapshotted</span> data.</li>
+                <li>Delivered interactive dashboards on internal visualization platforms for <span class="hl">real-time KPI tracking</span> and strategic decisions.</li>
+              </ul>
+              <ul class="tags" aria-label="Skills used">
+                <li>SQL</li><li>Array functions</li><li>Data modeling</li><li>Automation</li><li>Dashboards</li>
+              </ul>
+            </div>
+            <figure class="case__flow">
+              <ol class="flow" aria-label="Data flow">
+                <li class="flow__node flow__node--source" style="--i: 0"><span class="flow__stage">source</span><span class="flow__label">Data center operations data</span></li>
+                <li class="flow__node flow__node--transform" style="--i: 1"><span class="flow__stage">transform</span><span class="flow__label">SQL models + cumulative metrics</span></li>
+                <li class="flow__node flow__node--store" style="--i: 2"><span class="flow__stage">store</span><span class="flow__label">Week-on-week snapshots, auto-refreshed</span></li>
+                <li class="flow__node flow__node--serve" style="--i: 3"><span class="flow__stage">serve</span><span class="flow__label">Interactive KPI dashboards</span></li>
+              </ol>
+              <figcaption>How the data flows</figcaption>
+            </figure>
+          </article>
+
+          <!-- Case 02 -->
+          <article class="case reveal" aria-labelledby="case-2-title">
+            <span class="case__index" aria-hidden="true">02</span>
+            <div class="case__text">
+              <p class="case__client">Global heavy-equipment manufacturer</p>
+              <h3 class="case__title" id="case-2-title">Enterprise Analytics: Functional &amp; QA</h3>
+              <p class="case__role">Role · Functional &amp; QA consultant</p>
+              <p class="case__summary">Testing analyst and functional contributor for enterprise logistics, inventory and manufacturing analytics, covering UI, ETL, data quality and transformation validation.</p>
+              <ul class="case__outcomes">
+                <li>Identified and resolved defects across <span class="hl">15 analytics screens</span> with developers and business stakeholders, getting releases ready.</li>
+                <li>Automated SQL and Python data-quality checks to validate integrity across <span class="hl">Snowflake, Oracle DB and flat files</span> landing in SQL Server.</li>
+                <li>Reviewed KPI logic and metric formulas, suggesting design and calculation changes that improved accuracy and usability.</li>
+                <li>Created and ran test plans and scripts in Azure DevOps covering KPIs, date filters, tooltips and more.</li>
+              </ul>
+              <ul class="tags" aria-label="Skills used">
+                <li>SQL</li><li>Python</li><li>Snowflake</li><li>Oracle DB</li><li>SQL Server</li><li>Azure DevOps</li>
+              </ul>
+            </div>
+            <figure class="case__flow">
+              <ol class="flow" aria-label="Data flow">
+                <li class="flow__node flow__node--source" style="--i: 0"><span class="flow__stage">source</span><span class="flow__label">Snowflake · Oracle DB · flat files</span></li>
+                <li class="flow__node flow__node--store" style="--i: 1"><span class="flow__stage">store</span><span class="flow__label">SQL Server</span></li>
+                <li class="flow__node flow__node--transform" style="--i: 2"><span class="flow__stage">validate</span><span class="flow__label">Automated SQL + Python quality checks</span></li>
+                <li class="flow__node flow__node--serve" style="--i: 3"><span class="flow__stage">serve</span><span class="flow__label">15 analytics screens, release-ready</span></li>
+              </ol>
+              <figcaption>How the data flows</figcaption>
+            </figure>
+          </article>
+
+          <!-- Case 03 -->
+          <article class="case reveal" aria-labelledby="case-3-title">
+            <span class="case__index" aria-hidden="true">03</span>
+            <div class="case__text">
+              <p class="case__client">Fortune Global 100 PC &amp; printing company</p>
+              <h3 class="case__title" id="case-3-title">Enterprise Data Integration &amp; Migration</h3>
+              <p class="case__role">Role · Data engineer</p>
+              <p class="case__summary">APIs and SQL/Python ETL that unified 5+ sources for enterprise analytics, then made it 70% faster and moved 100M+ records to PostgreSQL without losing a single one.</p>
+              <ul class="case__outcomes">
+                <li>Cut ETL runtime by <span class="hl">70% (8.5 h → 2 h)</span> through indexing, partitioning and query tuning.</li>
+                <li>Led the migration of <span class="hl">100M+ records</span> from SQL Server to PostgreSQL with 100% data integrity.</li>
+                <li>Built APIs and Python (pandas, NumPy, requests) + SQL workflows integrating Adobe Analytics, Google Analytics, Baidu Analytics, PostgreSQL, SQL Server and Excel.</li>
+                <li>Reshaped Power BI datasets for Tableau with pivot and unpivot transformations.</li>
+              </ul>
+              <ul class="tags" aria-label="Skills used">
+                <li>Python</li><li>pandas</li><li>SQL</li><li>PostgreSQL</li><li>SQL Server</li><li>APIs</li><li>Power BI</li><li>Tableau</li>
+              </ul>
+            </div>
+            <figure class="case__flow">
+              <ol class="flow" aria-label="Data flow">
+                <li class="flow__node flow__node--source" style="--i: 0"><span class="flow__stage">source</span><span class="flow__label">Adobe, Google &amp; Baidu Analytics, PostgreSQL, SQL Server, Excel</span></li>
+                <li class="flow__node flow__node--transform" style="--i: 1"><span class="flow__stage">transform</span><span class="flow__label">Python + SQL ETL and APIs</span></li>
+                <li class="flow__node flow__node--store" style="--i: 2"><span class="flow__stage">store</span><span class="flow__label">PostgreSQL · 100M+ rows migrated</span></li>
+                <li class="flow__node flow__node--serve" style="--i: 3"><span class="flow__stage">serve</span><span class="flow__label">Power BI &amp; Tableau</span></li>
+              </ol>
+              <figcaption>How the data flows</figcaption>
+            </figure>
+          </article>
+        </div>
+
+        <p class="projects__more reveal">Side projects and experiments live on <a href="https://github.com/elanalina" target="_blank" rel="noopener">GitHub <span class="ms" aria-hidden="true">arrow_outward</span></a></p>
+      </div>
+    </section>
+
+    <!-- ============================== Contact ============================== -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact__card reveal">
+          <p class="eyebrow"><span>04</span>Contact</p>
+          <h2 class="contact__title" id="contact-title">Got a dataset that needs some love? <em>Let's talk.</em></h2>
+          <p class="contact__text">I'm always happy to talk data engineering, analytics or a gnarly data problem. Email is the quickest way to reach me.</p>
+          <div class="contact__email">
+            <a class="contact__address" href="mailto:elanalinae@gmail.com">elanalinae@gmail.com</a>
+            <button class="copy-btn" type="button" data-copy-email>
+              <span class="ms" aria-hidden="true">content_copy</span><span class="copy-btn__label">Copy</span>
+            </button>
+          </div>
+          <ul class="contact__links">
+            <li><a href="https://www.linkedin.com/in/ela-naliina-lakshmi/" target="_blank" rel="noopener">LinkedIn <span class="ms" aria-hidden="true">arrow_outward</span></a></li>
+            <li><a href="https://github.com/elanalina" target="_blank" rel="noopener">GitHub <span class="ms" aria-hidden="true">arrow_outward</span></a></li>
+            <li><a href="mailto:elanalinae@gmail.com">Email <span class="ms" aria-hidden="true">mail</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== Footer ============================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Elanaliina Elanchezhiyan</p>
+      <p class="footer-note">Plain HTML, CSS &amp; JavaScript. No frameworks, no trackers.<span class="footer-kbd"> Press <kbd>/</kbd> to explore.</span></p>
+      <a class="to-top" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Command palette -->
+  <dialog class="palette" id="palette" aria-label="Command palette">
+    <div class="palette__search">
+      <span class="ms" aria-hidden="true">search</span>
+      <input id="palette-input" type="text" placeholder="Jump to a section, copy my email, switch theme…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list" aria-label="Search commands">
+      <kbd>esc</kbd>
+    </div>
+    <ul class="palette__list" id="palette-list" role="listbox" aria-label="Commands"></ul>
+    <p class="palette__foot"><span><kbd>↑</kbd> <kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> select</span><span><kbd>esc</kbd> close</span></p>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

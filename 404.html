@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 · Page not found · Elanaliina Elanchezhiyan</title>
+  <meta name="robots" content="noindex">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="/assets/img/favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..800,0..100,0..1;1,9..144,300..800,0..100,0..1&amp;family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&amp;family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,300..500,0..1,0&amp;icon_names=arrow_downward,arrow_outward,check,close,content_copy,dark_mode,database,keyboard_return,light_mode,mail,menu,search&amp;display=block">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script>
+    (function () {
+      var theme;
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'dark' && theme !== 'light') {
+        theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <style>
+    .nf { display: grid; place-items: center; min-height: 100vh; padding: 48px var(--gutter); }
+    .nf__inner { width: min(640px, 100%); }
+    .nf .console__screen { height: auto; padding-bottom: 14px; }
+    .nf h1 { margin: 44px 0 16px; font-size: clamp(2.4rem, 6vw, 4rem); letter-spacing: -0.03em; }
+    .nf h1 em { color: var(--accent); font-style: italic; font-weight: 400; font-variation-settings: "SOFT" 100, "WONK" 1; }
+    .nf p { max-width: 46ch; margin-bottom: 32px; font-size: 1.12rem; }
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <main class="nf">
+    <div class="nf__inner">
+      <div class="console">
+        <div class="console__bar">
+          <span class="console__title"><span class="ms" aria-hidden="true">database</span>resume.db</span>
+          <span class="console__tag">404</span>
+        </div>
+        <div class="console__screen">
+          <div class="cline"><span class="cps">resume=&gt;</span><code class="ccode"><span class="tok-kw">SELECT</span> <span class="tok-punct">*</span> <span class="tok-kw">FROM</span> <span id="nf-path">this_page</span><span class="tok-punct">;</span></code></div>
+          <div class="cmsg">
+            <div class="cerr"><span class="cerr__label">ERROR:</span>  relation "<span id="nf-rel">this_page</span>" does not exist</div>
+            <div class="chint">HINT:  Perhaps you meant the home page?</div>
+          </div>
+        </div>
+      </div>
+      <h1>Nothing to <em>select</em> here.</h1>
+      <p>The page you're looking for doesn't exist or has moved. Let's get you back somewhere useful.</p>
+      <a class="btn btn--primary" href="/">Take me home</a>
+    </div>
+  </main>
+  <script>
+    (function () {
+      var path = decodeURIComponent(location.pathname).replace(/^\/+|\/+$/g, '').slice(0, 40) || 'this_page';
+      var a = document.getElementById('nf-path');
+      var b = document.getElementById('nf-rel');
+      if (a) a.textContent = '"' + path + '"';
+      if (b) b.textContent = path;
+    })();
+  </script>
+</body>
+</html>
