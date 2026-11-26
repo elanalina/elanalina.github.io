@@ -22,9 +22,15 @@
     return node;
   }
 
+  // Pages in sub-folders set <body data-root="../"> so links resolve to the home page.
+  var ROOT = (document.body && document.body.getAttribute('data-root')) || '';
+
   function scrollToHash(hash) {
     var target = hash === '#top' ? document.body : $(hash);
-    if (!target) return;
+    if (!target || (hash !== '#top' && ROOT)) {
+      window.location.href = ROOT + 'index.html' + hash;
+      return;
+    }
     target.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'start' });
     if (window.history && history.replaceState) history.replaceState(null, '', hash);
   }
@@ -52,7 +58,9 @@
     var x = rect.left + rect.width / 2;
     var y = rect.top + rect.height / 2;
     var radius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+    root.classList.add('theme-transition');
     var transition = document.startViewTransition(function () { applyTheme(next, true); });
+    transition.finished.then(function () { root.classList.remove('theme-transition'); }, function () { root.classList.remove('theme-transition'); });
     transition.ready.then(function () {
       root.animate(
         { clipPath: ['circle(0px at ' + x + 'px ' + y + 'px)', 'circle(' + radius + 'px at ' + x + 'px ' + y + 'px)'] },
@@ -565,10 +573,14 @@
       {
         id: 'query', label: 'Run a SQL query on my résumé', group: 'console', icon: 'database', keys: 'sql select console terminal',
         run: function () {
+          if (!consoleApi) { window.location.href = ROOT + 'index.html#home'; return; }
           scrollToHash('#top');
-          if (consoleApi) setTimeout(consoleApi.focus, reduceMotion.matches ? 0 : 450);
+          setTimeout(consoleApi.focus, reduceMotion.matches ? 0 : 450);
         },
       },
+      { id: 'cs1', label: 'Case study: Data Center Supply Chain Analytics', group: 'project', icon: 'arrow_forward', keys: 'ai chatbot insights dashboards maang', run: function () { window.location.href = ROOT + 'projects/data-center-analytics.html'; } },
+      { id: 'cs2', label: 'Case study: Enterprise Analytics QA', group: 'project', icon: 'arrow_forward', keys: 'testing quality screens kpi', run: function () { window.location.href = ROOT + 'projects/enterprise-analytics-qa.html'; } },
+      { id: 'cs3', label: 'Case study: Data Integration & Migration', group: 'project', icon: 'arrow_forward', keys: 'etl postgresql migration tableau', run: function () { window.location.href = ROOT + 'projects/data-integration-migration.html'; } },
       {
         id: 'theme', label: function () { return isDark() ? 'Switch to light theme' : 'Switch to dark theme'; },
         group: 'theme', icon: function () { return isDark() ? 'light_mode' : 'dark_mode'; }, keys: 'dark light mode appearance',
@@ -583,12 +595,13 @@
     var items = [];
     var active = 0;
 
-    function fuzzy(query, text) {
+    function scoreMatch(query, text) {
       text = text.toLowerCase();
-      if (text.indexOf(query) !== -1) return true;
+      var idx = text.indexOf(query);
+      if (idx !== -1) return idx === 0 ? 3 : 2;
       var j = 0;
       for (var i = 0; i < text.length && j < query.length; i++) if (text.charAt(i) === query.charAt(j)) j++;
-      return j === query.length;
+      return j === query.length ? 1 : 0;
     }
 
     function setActive(i) {
@@ -603,7 +616,15 @@
 
     function render() {
       var q = input.value.trim().toLowerCase();
-      items = commands.filter(function (c) { return !q || fuzzy(q, valueOf(c.label) + ' ' + c.keys + ' ' + c.group); });
+      if (!q) {
+        items = commands.slice();
+      } else {
+        items = commands
+          .map(function (c, i) { return { c: c, i: i, s: scoreMatch(q, valueOf(c.label) + ' ' + c.keys + ' ' + c.group) }; })
+          .filter(function (x) { return x.s > 0; })
+          .sort(function (a, b) { return b.s - a.s || a.i - b.i; })
+          .map(function (x) { return x.c; });
+      }
       list.textContent = '';
       if (!items.length) {
         list.appendChild(el('li', 'palette__empty', 'Nothing matches. Try "theme", "email" or "sql".'));

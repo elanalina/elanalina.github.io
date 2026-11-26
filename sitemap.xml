@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://elanalina.github.io/</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
+    <loc>https://elanalina.github.io/projects/data-center-analytics.html</loc>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
+    <loc>https://elanalina.github.io/projects/enterprise-analytics-qa.html</loc>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+  <url>
+    <loc>https://elanalina.github.io/projects/data-integration-migration.html</loc>
+    <lastmod>2026-11-26</lastmod>
   </url>
 </urlset>

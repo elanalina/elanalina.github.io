@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Enterprise Analytics: Functional &amp; QA · Case study · Elanaliina Elanchezhiyan</title>
+  <meta name="description" content="How I tested enterprise logistics, inventory and manufacturing analytics: automated data-quality checks, KPI logic review and 15 analytics screens made release-ready.">
+  <meta name="author" content="Elanaliina Elanchezhiyan">
+  <link rel="canonical" href="https://elanalina.github.io/projects/enterprise-analytics-qa.html">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F7F0E6">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Elanaliina Elanchezhiyan">
+  <meta property="og:url" content="https://elanalina.github.io/projects/enterprise-analytics-qa.html">
+  <meta property="og:title" content="Enterprise Analytics: Functional &amp; QA · Case study">
+  <meta property="og:description" content="How I tested enterprise logistics, inventory and manufacturing analytics: automated data-quality checks, KPI logic review and 15 analytics screens made release-ready.">
+  <meta property="og:image" content="https://elanalina.github.io/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://elanalina.github.io/assets/img/og-image.jpg">
+
+  <link rel="icon" href="../assets/img/favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..800,0..100,0..1;1,9..144,300..800,0..100,0..1&amp;family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&amp;family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,300..500,0..1,0&amp;icon_names=api,arrow_back,arrow_downward,arrow_forward,arrow_outward,bar_chart,bolt,bug_report,chat_bubble,check,checklist,close,content_copy,dark_mode,dashboard,data_object,database,description,donut_large,event_repeat,fact_check,filter_alt,functions,inventory_2,keyboard_return,light_mode,lock,mail,menu,merge,monitoring,pivot_table_chart,query_stats,rule,schema,search,send,show_chart,smart_toy,speed,storage,swap_horiz,sync_alt,table_chart,task_alt,timer,touch_app,trending_down,tune,verified,verified_user,view_quilt,wand_stars&amp;display=block">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/case.css">
+
+  <script>
+    (function () {
+      var root = document.documentElement, theme;
+      try { theme = new URLSearchParams(location.search).get('theme') || localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'dark' && theme !== 'light') {
+        theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      root.setAttribute('data-theme', theme);
+      root.classList.add('js');
+    })();
+  </script>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/case.js" defer></script>
+</head>
+<body data-root="../">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="Elanaliina Elanchezhiyan, home">
+        <span class="brand__mark" aria-hidden="true">e</span>
+        <span class="brand__name" aria-hidden="true">elanaliina<span class="brand__dot">.</span></span>
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../index.html#projects" class="is-active" aria-current="page">Projects</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="kbd-btn" id="palette-open" type="button" aria-label="Open command palette" aria-haspopup="dialog">
+          <span class="ms" aria-hidden="true">search</span>
+          <kbd class="kbd-hint">⌘K</kbd>
+        </button>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <span class="ms theme-icon theme-icon--dark" aria-hidden="true">dark_mode</span>
+          <span class="ms theme-icon theme-icon--light" aria-hidden="true">light_mode</span>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+          <span class="ms" aria-hidden="true">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="cs-hero" aria-labelledby="cs-title">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container">
+        <a class="cs-back" href="../index.html#projects"><span class="ms" aria-hidden="true">arrow_back</span>All projects</a>
+        <p class="case__client reveal">Case study 02 · Global heavy-equipment manufacturer</p>
+        <h1 class="cs-title reveal" id="cs-title" style="view-transition-name: case-title-2">Enterprise Analytics: Functional &amp; QA</h1>
+        <p class="cs-tagline reveal">Making sure every KPI, filter and tooltip told the truth before release.</p>
+        <ul class="cs-meta reveal"><li><b>Role ·</b> Functional &amp; QA consultant</li><li><b>Areas ·</b> Logistics · Inventory · Manufacturing</li></ul>
+        <ul class="glance" aria-label="At a glance">
+          <li class="glance__tile reveal">
+            <span class="ico stage--accent" aria-hidden="true"><span class="ms">view_quilt</span></span>
+            <span class="glance__value"><span data-count="15">15</span></span>
+            <span class="glance__label">Analytics screens</span>
+            <span class="glance__note">Defects found and resolved before release</span>
+          </li>
+          <li class="glance__tile reveal">
+            <span class="ico stage--sage" aria-hidden="true"><span class="ms">storage</span></span>
+            <span class="glance__value"><span data-count="3">3</span></span>
+            <span class="glance__label">Source types</span>
+            <span class="glance__note">Snowflake, Oracle DB and flat files</span>
+          </li>
+          <li class="glance__tile reveal">
+            <span class="ico stage--marigold" aria-hidden="true"><span class="ms">fact_check</span></span>
+            <span class="glance__value glance__value--text">Automated</span>
+            <span class="glance__label">Data-quality checks</span>
+            <span class="glance__note">Written in SQL and Python</span>
+          </li>
+          <li class="glance__tile reveal">
+            <span class="ico stage--teal" aria-hidden="true"><span class="ms">checklist</span></span>
+            <span class="glance__value glance__value--text">End-to-end</span>
+            <span class="glance__label">Test plans</span>
+            <span class="glance__note">Created and run in Azure DevOps</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cs-section cs-section--alt">
+      <div class="container">
+        <header class="cs-head">
+          <p class="eyebrow reveal"><span>01</span>Architecture</p>
+          <h2 class="reveal">Where quality was <em>checked</em></h2>
+          <p class="reveal">Data from three kinds of sources landed in SQL Server, and automated checks guarded it before it reached the analytics screens.</p>
+        </header>
+        <ol class="pipe" aria-label="Data flow from sources to analytics screens">
+          <li class="pipe__stage stage--sage reveal" style="--i: 0; --d: 0.00s">
+            <span class="ico stage--sage" aria-hidden="true"><span class="ms">storage</span></span>
+            <div><span class="pipe__kind">Sources</span><span class="pipe__name">Three source types</span><ul class="pipe__chips"><li>Snowflake</li><li>Oracle DB</li><li>Flat files</li></ul></div>
+          </li>
+          <li class="pipe__stage stage--accent reveal" style="--i: 1; --d: 0.08s">
+            <span class="ico stage--accent" aria-hidden="true"><span class="ms">database</span></span>
+            <div><span class="pipe__kind">Store</span><span class="pipe__name">SQL Server</span><span class="pipe__detail">Logistics, inventory and manufacturing data</span></div>
+          </li>
+          <li class="pipe__stage stage--marigold reveal" style="--i: 2; --d: 0.16s">
+            <span class="ico stage--marigold" aria-hidden="true"><span class="ms">fact_check</span></span>
+            <div><span class="pipe__kind">Validate</span><span class="pipe__name">Automated checks</span><span class="pipe__detail">SQL + Python integrity checks across systems</span></div>
+          </li>
+          <li class="pipe__stage stage--ink reveal" style="--i: 3; --d: 0.24s">
+            <span class="ico stage--ink" aria-hidden="true"><span class="ms">view_quilt</span></span>
+            <div><span class="pipe__kind">Serve</span><span class="pipe__name">Analytics screens</span><span class="pipe__detail">UI, KPIs, filters and tooltips verified</span></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <div class="container">
+        <header class="cs-head">
+          <p class="eyebrow reveal"><span>02</span>Release readiness</p>
+          <h2 class="reveal">15 screens, all <em>release-ready</em></h2>
+          <p class="reveal">I identified and resolved defects across 15 analytics screens, working with developers and business stakeholders until every screen was ready to ship.</p>
+        </header>
+        <div class="screens-wrap">
+          <ol class="screens reveal" data-screens aria-label="15 analytics screens"><li class="screen"><span class="screen__badge"><span class="ms">bug_report</span><span class="ms">check</span></span></li><li class="screen"><span class="screen__badge"><span class="ms">bug_report</span><span class="ms">check</span></span></li><li class="screen"><span class="screen__badge"><span class="ms">bug_report</span><span class="ms">check</span></span></li><li class="screen"><span class="screen__badge"><span class="ms">bug_report</span><span class="ms">check</span></span></li><li class="screen"><span class="screen__badge"><span class="ms">bug_report</span><span class="ms">check</span></span></li><li class="screen"><span class="screen__badge"><span class="ms">bug_report</span><span class="ms">check</span></span></li><li class="screen"><span class="screen__badge"><span class="ms">bug_report</span><span class="ms">check</span></span></li><li class="screen"><span class="screen__badge"><span class="ms">bug_report</span><span class="ms">check</span></span></li><li class="screen"><span class="screen__badge"><span class="ms">bug_report</span><span class="ms">check</span></span></li><li class="screen"><span class="screen__badge"><span class="ms">bug_report</span><span class="ms">check</span></span></li><li class="screen"><span class="screen__badge"><span class="ms">bug_report</span><span class="ms">check</span></span></li><li class="screen"><span class="screen__badge"><span class="ms">bug_report</span><span class="ms">check</span></span></li><li class="screen"><span class="screen__badge"><span class="ms">bug_report</span><span class="ms">check</span></span></li><li class="screen"><span class="screen__badge"><span class="ms">bug_report</span><span class="ms">check</span></span></li><li class="screen"><span class="screen__badge"><span class="ms">bug_report</span><span class="ms">check</span></span></li></ol>
+          <div class="reveal">
+            <p class="screens-count"><span data-screens-count>15</span><small> / 15 verified</small></p>
+            <p>Every screen went from <b>defect found</b> to <b>verified</b>, covering UI, ETL, data quality and transformation logic.</p>
+            <div class="screens-legend"><span><i></i>Defect found</span><span><i class="ok"></i>Verified</span></div>
+          </div>
+        </div>
+        <p class="cs-note">Illustration of the release process.</p>
+      </div>
+    </section>
+
+    <section class="cs-section cs-section--alt">
+      <div class="container">
+        <header class="cs-head">
+          <p class="eyebrow reveal"><span>03</span>Test coverage</p>
+          <h2 class="reveal">What every screen was <em>tested</em> for</h2>
+          <p class="reveal">Test plans and scripts in Azure DevOps covered the whole path, from the data underneath to what users actually see.</p>
+        </header>
+        <ul class="cover"><li class="reveal"><span class="ico stage--accent" aria-hidden="true"><span class="ms">functions</span></span>KPIs &amp; metric formulas</li><li class="reveal"><span class="ico stage--marigold" aria-hidden="true"><span class="ms">filter_alt</span></span>Date filters</li><li class="reveal"><span class="ico stage--teal" aria-hidden="true"><span class="ms">chat_bubble</span></span>Tooltips</li><li class="reveal"><span class="ico stage--ink" aria-hidden="true"><span class="ms">view_quilt</span></span>UI behavior</li><li class="reveal"><span class="ico stage--sage" aria-hidden="true"><span class="ms">sync_alt</span></span>ETL &amp; transformations</li><li class="reveal"><span class="ico stage--accent" aria-hidden="true"><span class="ms">verified</span></span>Data quality &amp; integrity</li></ul>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <div class="container">
+        <header class="cs-head">
+          <p class="eyebrow reveal"><span>04</span>KPI logic review</p>
+          <h2 class="reveal">Reading the math behind every <em>KPI</em></h2>
+          <p class="reveal">I reviewed the logic and formulas behind the KPIs and proposed design and calculation changes that made them more accurate and easier to use.</p>
+        </header>
+        <div class="cs-split">
+          <div class="formula reveal">
+            <p class="formula__label">KPI definition</p>
+            <p class="formula__expr"><span>KPI</span><span>=</span><span class="frac"><span><mark>Σ value</mark></span><span>Σ base</span></span></p>
+            <ul class="formula__checks">
+              <li><span class="ms" aria-hidden="true">check</span>Logic reviewed</li>
+              <li><span class="ms" aria-hidden="true">check</span>Formulas checked</li>
+              <li><span class="ms" aria-hidden="true">check</span>Calculation changes proposed</li>
+              <li><span class="ms" aria-hidden="true">check</span>Design changes proposed</li>
+            </ul>
+          </div>
+          <ul class="cap-list">
+            <li class="cap reveal"><span class="ico stage--accent" aria-hidden="true"><span class="ms">rule</span></span><div><strong>More accurate</strong><p>Calculation changes so each KPI measures what it claims to.</p></div></li>
+            <li class="cap reveal"><span class="ico stage--teal" aria-hidden="true"><span class="ms">tune</span></span><div><strong>Easier to use</strong><p>Design suggestions so people read the numbers the right way.</p></div></li>
+          </ul>
+        </div>
+        <p class="cs-note">Illustration: formula simplified.</p>
+      </div>
+    </section>
+
+    <section class="cs-section cs-section--alt">
+      <div class="container">
+        <header class="cs-head">
+          <p class="eyebrow reveal"><span>05</span>What I did</p>
+          <h2 class="reveal">Step by <em>step</em></h2>
+          <p class="reveal">How each release went from test plan to verified screens.</p>
+        </header>
+        <ol class="steps">
+          <li class="step reveal" style="--d: 0.00s">
+            <span class="step__icon" aria-hidden="true"><span class="ms">checklist</span></span>
+            <span class="step__n">Step 01</span>
+            <strong>Planned the tests</strong>
+            <span class="step__text">Test plans and scripts in Azure DevOps</span>
+          </li>
+          <li class="step reveal" style="--d: 0.08s">
+            <span class="step__icon" aria-hidden="true"><span class="ms">fact_check</span></span>
+            <span class="step__n">Step 02</span>
+            <strong>Automated quality checks</strong>
+            <span class="step__text">SQL and Python checks across Snowflake, Oracle DB and flat files</span>
+          </li>
+          <li class="step reveal" style="--d: 0.16s">
+            <span class="step__icon" aria-hidden="true"><span class="ms">sync_alt</span></span>
+            <span class="step__n">Step 03</span>
+            <strong>Validated the pipeline</strong>
+            <span class="step__text">ETL, data quality and transformation validation</span>
+          </li>
+          <li class="step reveal" style="--d: 0.24s">
+            <span class="step__icon" aria-hidden="true"><span class="ms">functions</span></span>
+            <span class="step__n">Step 04</span>
+            <strong>Reviewed KPI logic</strong>
+            <span class="step__text">Calculation and design improvements proposed</span>
+          </li>
+          <li class="step reveal" style="--d: 0.32s">
+            <span class="step__icon" aria-hidden="true"><span class="ms">task_alt</span></span>
+            <span class="step__n">Step 05</span>
+            <strong>Shipped 15 screens</strong>
+            <span class="step__text">Defects resolved with developers and stakeholders</span>
+          </li>
+        </ol>
+        <ul class="chips-row reveal" aria-label="Tools and techniques"><li>SQL</li><li>Python</li><li>Snowflake</li><li>Oracle DB</li><li>SQL Server</li><li>Azure DevOps</li></ul>
+      </div>
+    </section>
+
+    <nav class="container cs-next" aria-label="More projects">
+      <a class="cs-next__card" href="data-integration-migration.html">
+        <span class="cs-next__kicker">Next project <span class="ms" aria-hidden="true">arrow_forward</span></span>
+        <strong>Enterprise Data Integration &amp; Migration</strong>
+        <span>Fortune Global 100 PC &amp; printing company</span>
+      </a>
+      <a class="cs-next__home" href="../index.html#projects"><span class="ms" aria-hidden="true">arrow_back</span>Back to all projects</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Elanaliina Elanchezhiyan</p>
+      <p class="footer-note">Client names are kept confidential. Visuals marked as illustrations use sample data.</p>
+      <a class="to-top" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <dialog class="palette" id="palette" aria-label="Command palette">
+    <div class="palette__search">
+      <span class="ms" aria-hidden="true">search</span>
+      <input id="palette-input" type="text" placeholder="Jump to a section, open a project, switch theme…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list" aria-label="Search commands">
+      <kbd>esc</kbd>
+    </div>
+    <ul class="palette__list" id="palette-list" role="listbox" aria-label="Commands"></ul>
+    <p class="palette__foot"><span><kbd>↑</kbd> <kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> select</span><span><kbd>esc</kbd> close</span></p>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

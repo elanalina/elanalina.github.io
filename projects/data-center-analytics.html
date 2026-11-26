@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Global Data Center Supply Chain Analytics · Case study · Elanaliina Elanchezhiyan</title>
+  <meta name="description" content="How I turned spreadsheet reporting into live, AI-assisted dashboards: SQL models, weekly snapshots, an AI chatbot and AI chart insights from one reusable prompt template.">
+  <meta name="author" content="Elanaliina Elanchezhiyan">
+  <link rel="canonical" href="https://elanalina.github.io/projects/data-center-analytics.html">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F7F0E6">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Elanaliina Elanchezhiyan">
+  <meta property="og:url" content="https://elanalina.github.io/projects/data-center-analytics.html">
+  <meta property="og:title" content="Global Data Center Supply Chain Analytics · Case study">
+  <meta property="og:description" content="How I turned spreadsheet reporting into live, AI-assisted dashboards: SQL models, weekly snapshots, an AI chatbot and AI chart insights from one reusable prompt template.">
+  <meta property="og:image" content="https://elanalina.github.io/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://elanalina.github.io/assets/img/og-image.jpg">
+
+  <link rel="icon" href="../assets/img/favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..800,0..100,0..1;1,9..144,300..800,0..100,0..1&amp;family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&amp;family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,300..500,0..1,0&amp;icon_names=api,arrow_back,arrow_downward,arrow_forward,arrow_outward,bar_chart,bolt,bug_report,chat_bubble,check,checklist,close,content_copy,dark_mode,dashboard,data_object,database,description,donut_large,event_repeat,fact_check,filter_alt,functions,inventory_2,keyboard_return,light_mode,lock,mail,menu,merge,monitoring,pivot_table_chart,query_stats,rule,schema,search,send,show_chart,smart_toy,speed,storage,swap_horiz,sync_alt,table_chart,task_alt,timer,touch_app,trending_down,tune,verified,verified_user,view_quilt,wand_stars&amp;display=block">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/case.css">
+
+  <script>
+    (function () {
+      var root = document.documentElement, theme;
+      try { theme = new URLSearchParams(location.search).get('theme') || localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'dark' && theme !== 'light') {
+        theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      root.setAttribute('data-theme', theme);
+      root.classList.add('js');
+    })();
+  </script>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/case.js" defer></script>
+</head>
+<body data-root="../">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="Elanaliina Elanchezhiyan, home">
+        <span class="brand__mark" aria-hidden="true">e</span>
+        <span class="brand__name" aria-hidden="true">elanaliina<span class="brand__dot">.</span></span>
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../index.html#projects" class="is-active" aria-current="page">Projects</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="kbd-btn" id="palette-open" type="button" aria-label="Open command palette" aria-haspopup="dialog">
+          <span class="ms" aria-hidden="true">search</span>
+          <kbd class="kbd-hint">⌘K</kbd>
+        </button>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <span class="ms theme-icon theme-icon--dark" aria-hidden="true">dark_mode</span>
+          <span class="ms theme-icon theme-icon--light" aria-hidden="true">light_mode</span>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+          <span class="ms" aria-hidden="true">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="cs-hero" aria-labelledby="cs-title">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container">
+        <a class="cs-back" href="../index.html#projects"><span class="ms" aria-hidden="true">arrow_back</span>All projects</a>
+        <p class="case__client reveal">Case study 01 · MAANG technology company</p>
+        <h1 class="cs-title reveal" id="cs-title" style="view-transition-name: case-title-1">Global Data Center Supply Chain Analytics</h1>
+        <p class="cs-tagline reveal">From spreadsheet reports to live, AI-assisted dashboards for global data center operations.</p>
+        <ul class="cs-meta reveal"><li><b>Role ·</b> Analytics consultant</li><li><b>Focus ·</b> SQL modeling · Dashboards · Generative AI</li></ul>
+        <ul class="glance" aria-label="At a glance">
+          <li class="glance__tile reveal">
+            <span class="ico stage--marigold" aria-hidden="true"><span class="ms">event_repeat</span></span>
+            <span class="glance__value glance__value--text">Weekly</span>
+            <span class="glance__label">Snapshotted history</span>
+            <span class="glance__note">Week-on-week snapshots, refreshed automatically</span>
+          </li>
+          <li class="glance__tile reveal">
+            <span class="ico stage--accent" aria-hidden="true"><span class="ms">query_stats</span></span>
+            <span class="glance__value glance__value--text">Real-time</span>
+            <span class="glance__label">KPI tracking</span>
+            <span class="glance__note">Interactive dashboards replaced spreadsheet reports</span>
+          </li>
+          <li class="glance__tile reveal">
+            <span class="ico stage--teal" aria-hidden="true"><span class="ms">smart_toy</span></span>
+            <span class="glance__value glance__value--text">AI chatbot</span>
+            <span class="glance__label">Ask the dashboard</span>
+            <span class="glance__note">Plain-language questions about the data and the dashboard</span>
+          </li>
+          <li class="glance__tile reveal">
+            <span class="ico stage--sage" aria-hidden="true"><span class="ms">wand_stars</span></span>
+            <span class="glance__value glance__value--text">1 → many</span>
+            <span class="glance__label">Prompt template</span>
+            <span class="glance__note">One reusable template writes insights for many charts</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cs-section cs-section--alt">
+      <div class="container">
+        <header class="cs-head">
+          <p class="eyebrow reveal"><span>01</span>Architecture</p>
+          <h2 class="reveal">How the data <em>flows</em></h2>
+          <p class="reveal">Five stages take raw operations data all the way to answers in plain language.</p>
+        </header>
+        <ol class="pipe" aria-label="Data flow from operations data to AI layer">
+          <li class="pipe__stage stage--sage reveal" style="--i: 0; --d: 0.00s">
+            <span class="ico stage--sage" aria-hidden="true"><span class="ms">storage</span></span>
+            <div><span class="pipe__kind">Source</span><span class="pipe__name">Operations data</span><span class="pipe__detail">Global data center supply chain feeds</span></div>
+          </li>
+          <li class="pipe__stage stage--marigold reveal" style="--i: 1; --d: 0.08s">
+            <span class="ico stage--marigold" aria-hidden="true"><span class="ms">functions</span></span>
+            <div><span class="pipe__kind">Transform</span><span class="pipe__name">SQL models</span><span class="pipe__detail">Tables and complex metric logic</span><ul class="pipe__chips"><li>Cumulative metrics</li><li>Array functions</li></ul></div>
+          </li>
+          <li class="pipe__stage stage--accent reveal" style="--i: 2; --d: 0.16s">
+            <span class="ico stage--accent" aria-hidden="true"><span class="ms">event_repeat</span></span>
+            <div><span class="pipe__kind">Store</span><span class="pipe__name">Weekly snapshots</span><span class="pipe__detail">Automated refresh with week-on-week history</span></div>
+          </li>
+          <li class="pipe__stage stage--ink reveal" style="--i: 3; --d: 0.24s">
+            <span class="ico stage--ink" aria-hidden="true"><span class="ms">dashboard</span></span>
+            <div><span class="pipe__kind">Serve</span><span class="pipe__name">Live dashboards</span><span class="pipe__detail">Real-time KPI tracking for strategic decisions</span></div>
+          </li>
+          <li class="pipe__stage stage--teal reveal" style="--i: 4; --d: 0.32s">
+            <span class="ico stage--teal" aria-hidden="true"><span class="ms">smart_toy</span></span>
+            <div><span class="pipe__kind">AI layer</span><span class="pipe__name">Chatbot + insights</span><span class="pipe__detail">Questions answered, charts explained</span></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <div class="container">
+        <header class="cs-head">
+          <p class="eyebrow reveal"><span>02</span>Impact</p>
+          <h2 class="reveal">From spreadsheets to <em>live dashboards</em></h2>
+          <p class="reveal">Drag the divider to compare how reporting worked before and after.</p>
+        </header>
+        <div class="ba reveal">
+          <div class="ba__pane ba__pane--before" aria-hidden="true">
+            <div class="sheet">
+              <div class="sheet__bar"><span class="ms">table_chart</span>weekly_report_FINAL_v3.xlsx</div>
+              <div class="sheet__grid"><span class="is-head" style="--c: 0; --r: 0">Week</span><span class="is-head" style="--c: 1; --r: 0">Metric A</span><span class="is-head" style="--c: 2; --r: 0">Metric B</span><span class="is-head" style="--c: 3; --r: 0">Metric C</span><span class="is-head wide-only" style="--c: 4; --r: 0">Total</span><span class="is-head wide-only" style="--c: 5; --r: 0">WoW %</span><span class="is-head wide-only" style="--c: 6; --r: 0">Notes</span><span class="" style="--c: 0; --r: 1">W01</span><span class="" style="--c: 1; --r: 1">11,920</span><span class="" style="--c: 2; --r: 1">84.2%</span><span class="" style="--c: 3; --r: 1">3,410</span><span class="wide-only" style="--c: 4; --r: 1">15,330</span><span class="wide-only" style="--c: 5; --r: 1">—</span><span class="" style="--c: 0; --r: 2">W02</span><span class="" style="--c: 1; --r: 2">12,050</span><span class="" style="--c: 2; --r: 2">84.9%</span><span class="" style="--c: 3; --r: 2">3,512</span><span class="is-err wide-only" style="--c: 4; --r: 2">#REF!</span><span class="wide-only" style="--c: 5; --r: 2">+0.8</span><span class="wide-only" style="--c: 6; --r: 2">check?</span><span class="" style="--c: 0; --r: 3">W03</span><span class="" style="--c: 1; --r: 3">11,870</span><span class="is-hl" style="--c: 2; --r: 3">85.1%</span><span class="" style="--c: 3; --r: 3">3,488</span><span class="wide-only" style="--c: 4; --r: 3">15,358</span><span class="wide-only" style="--c: 5; --r: 3">-0.2</span><span class="" style="--c: 0; --r: 4">W04</span><span class="" style="--c: 1; --r: 4">12,210</span><span class="is-err" style="--c: 2; --r: 4">#N/A</span><span class="" style="--c: 3; --r: 4">3,602</span><span class="wide-only" style="--c: 4; --r: 4">15,812</span><span class="wide-only" style="--c: 5; --r: 4">+3.0</span><span class="wide-only" style="--c: 6; --r: 4">copy of v2</span><span class="" style="--c: 0; --r: 5">W05</span><span class="" style="--c: 1; --r: 5">12,388</span><span class="" style="--c: 2; --r: 5">85.6%</span><span class="" style="--c: 3; --r: 5">3,690</span><span class="wide-only" style="--c: 4; --r: 5">16,078</span><span class="wide-only" style="--c: 5; --r: 5">+1.7</span><span class="" style="--c: 0; --r: 6">W06</span><span class="" style="--c: 1; --r: 6">12,401</span><span class="" style="--c: 2; --r: 6">86.1%</span><span class="" style="--c: 3; --r: 6">3,904</span><span class="wide-only" style="--c: 4; --r: 6">16,305</span><span class="wide-only" style="--c: 5; --r: 6">+1.4</span><span class="" style="--c: 0; --r: 7">W07</span><span class="" style="--c: 1; --r: 7">12,288</span><span class="" style="--c: 2; --r: 7">85.8%</span><span class="" style="--c: 3; --r: 7">3,866</span><span class="wide-only" style="--c: 4; --r: 7">16,154</span><span class="wide-only" style="--c: 5; --r: 7">-0.9</span><span class="" style="--c: 0; --r: 8">W08</span><span class="" style="--c: 1; --r: 8">12,515</span><span class="" style="--c: 2; --r: 8">86.4%</span><span class="" style="--c: 3; --r: 8">3,951</span><span class="wide-only" style="--c: 4; --r: 8">16,466</span><span class="wide-only" style="--c: 5; --r: 8">+1.9</span><span class="wide-only" style="--c: 6; --r: 8">ask team</span><span class="" style="--c: 0; --r: 9">W09</span><span class="" style="--c: 1; --r: 9"></span><span class="" style="--c: 2; --r: 9"></span><span class="" style="--c: 3; --r: 9"></span><span class="is-hl wide-only" style="--c: 6; --r: 9">TODO</span><span class="is-head" style="--c: 0; --r: 11">Total</span><span class="" style="--c: 1; --r: 11">=SUM(B2:B9)</span><span class="is-err" style="--c: 2; --r: 11">#DIV/0!</span><span class="" style="--c: 3; --r: 11">28,423</span><span class="is-err wide-only" style="--c: 4; --r: 11">#REF!</span></div>
+            </div>
+          </div>
+          <div class="ba__pane ba__pane--after" aria-hidden="true">
+            <div class="dash">
+              <div class="dash__side"><i></i><i class="is-on"></i><i></i><i></i><i></i></div>
+              <div class="dash__main">
+                <div class="dash__bar"><span class="dash__title">KPI overview</span><span class="dash__filter">This quarter ▾</span><span class="dash__filter">All categories ▾</span><span class="dash__ai"><span class="ms">smart_toy</span>Ask AI</span></div>
+                <div class="dash__kpis">
+                  <div class="dash__kpi"><span>Metric A</span><strong>12.4K</strong><em>▲ 4.2%</em></div>
+                  <div class="dash__kpi"><span>Metric B</span><strong>86.1%</strong><em>▲ 1.3%</em></div>
+                  <div class="dash__kpi"><span>Metric C</span><strong>3,904</strong><em>▲ 8.4%</em></div>
+                  <div class="dash__kpi"><span>Metric D</span><strong>97.2%</strong><em>▲ 0.6%</em></div>
+                </div>
+                <div class="dash__charts">
+                  <figure class="dash__chart">
+                    <figcaption><span>Cumulative trend · 12 weeks</span><span class="dash__legend"><span><i></i>Actual</span><span><i class="t"></i>Plan</span></span></figcaption>
+                    <svg viewBox="0 0 300 120" preserveAspectRatio="none"><g class="dash__grid"><line x1="0" y1="20" x2="300" y2="20"/><line x1="0" y1="50" x2="300" y2="50"/><line x1="0" y1="80" x2="300" y2="80"/><line x1="0" y1="110" x2="300" y2="110"/></g><path class="viz-area" d="M0 104 C 40 100, 70 92, 100 84 S 160 64, 200 52 S 260 30, 300 18 L 300 120 L 0 120 Z"/><path class="viz-line viz-line--2" d="M0 102 L 300 34"/><path class="viz-line" d="M0 104 C 40 100, 70 92, 100 84 S 160 64, 200 52 S 260 30, 300 18"/></svg>
+                  </figure>
+                  <figure class="dash__chart">
+                    <figcaption><span>Week over week</span></figcaption>
+                    <div class="dash__bars"><i style="--h: 46%"></i><i style="--h: 58%"></i><i style="--h: 52%"></i><i style="--h: 63%"></i><i style="--h: 55%"></i><i style="--h: 70%"></i><i style="--h: 74%"></i><i style="--h: 88%"></i></div>
+                  </figure>
+                </div>
+                <p class="dash__insight"><span class="ms">wand_stars</span><span><b>AI insight:</b> Metric C rose 8.4% week over week, the largest move this quarter.</span></p>
+              </div>
+            </div>
+          </div>
+          <span class="ba__divider" aria-hidden="true"></span>
+          <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Compare spreadsheet reporting (before) with live dashboards (after)">
+          <span class="ba__handle" aria-hidden="true"><span class="ms">swap_horiz</span></span>
+          <span class="ba__tag ba__tag--before">Before · spreadsheets</span>
+          <span class="ba__tag ba__tag--after">After · live dashboards</span>
+        </div>
+        <p class="sr-only">Illustration: a weekly spreadsheet full of manual numbers and errors is replaced by a live dashboard with KPI cards, a cumulative trend chart and an Ask AI button.</p>
+        <p class="cs-note">Illustration with sample data. No client data is shown.</p>
+      </div>
+    </section>
+
+    <section class="cs-section cs-section--alt">
+      <div class="container">
+        <header class="cs-head">
+          <p class="eyebrow reveal"><span>03</span>Conversational analytics</p>
+          <h2 class="reveal">Ask the dashboard <em>anything</em></h2>
+          <p class="reveal">I integrated an AI chatbot into the dashboard, so people can ask questions about the data, or about the dashboard itself, in plain language.</p>
+        </header>
+        <div class="cs-split">
+          <div class="chat reveal" data-chat aria-label="Sample conversation with the dashboard assistant">
+            <div class="chat__bar"><span class="ico stage--teal" aria-hidden="true"><span class="ms">smart_toy</span></span><strong>Dashboard assistant</strong><span class="chat__status">● online</span></div>
+            <div class="chat__body">
+              <div class="msg msg--user">Which KPI moved the most this week?</div>
+              <div class="msg msg--bot"><b>Metric C</b> rose <b>8.4%</b> week over week, the biggest change on the dashboard.</div>
+              <div class="msg msg--user">How do I see just the last quarter?</div>
+              <div class="msg msg--bot">Use the <b>date filter</b> at the top and choose “Last quarter”. Every chart updates together.</div>
+              <div class="typing" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
+            <div class="chat__input" aria-hidden="true"><span>Ask about the data or the dashboard…</span><span class="ms">send</span></div>
+          </div>
+          <ul class="cap-list">
+            <li class="cap reveal"><span class="ico stage--accent" aria-hidden="true"><span class="ms">query_stats</span></span><div><strong>Questions about the data</strong><p>Trends, comparisons and week-over-week changes, answered in plain language.</p></div></li>
+            <li class="cap reveal"><span class="ico stage--marigold" aria-hidden="true"><span class="ms">touch_app</span></span><div><strong>Questions about the dashboard</strong><p>Where a metric lives, what a chart means and which filter to use.</p></div></li>
+          </ul>
+        </div>
+        <p class="cs-note">Illustrative conversation with sample data.</p>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <div class="container">
+        <header class="cs-head">
+          <p class="eyebrow reveal"><span>04</span>AI chart insights</p>
+          <h2 class="reveal">One prompt template, <em>every chart</em></h2>
+          <p class="reveal">Instead of writing a prompt for each chart, I wrote one reusable template. Each chart fills in its own details, and the model returns a short insight about what that chart shows.</p>
+        </header>
+        <div class="tpl reveal" data-template>
+          <div class="tpl__card">
+            <p class="tpl__name"><span class="ms" aria-hidden="true">data_object</span>insight_prompt_template</p>
+            <span class="tpl__line tpl__line--m" aria-hidden="true"></span>
+            <span class="tpl__line tpl__line--s" aria-hidden="true"></span>
+            <ul class="tpl__slots" aria-label="Template inputs">
+              <li><span>chart</span><span class="slot" data-slot="chart">Cumulative trend</span></li>
+              <li><span>metric</span><span class="slot" data-slot="metric">Metric A</span></li>
+              <li><span>time window</span><span class="slot" data-slot="window">Last 12 weeks</span></li>
+            </ul>
+            <span class="tpl__line tpl__line--m" aria-hidden="true"></span>
+            <p class="tpl__out" aria-live="polite"><span class="ms" aria-hidden="true">wand_stars</span><span data-out>Up 12% over 12 weeks, with the steepest climb in the last three.</span></p>
+          </div>
+          <svg class="tpl__fan" viewBox="0 0 90 300" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 150 C 45 150, 45 50, 90 50"/><path d="M0 150 L 90 150"/><path d="M0 150 C 45 150, 45 250, 90 250"/>
+          </svg>
+          <ul class="tpl__charts">
+            <li><button class="mini" type="button" data-chart="Cumulative trend" data-metric="Metric A" data-window="Last 12 weeks" data-insight="Up 12% over 12 weeks, with the steepest climb in the last three.">
+              <svg viewBox="0 0 110 64" aria-hidden="true"><path class="viz-area" d="M0 58 C 20 54, 35 48, 50 42 S 80 28, 110 8 L 110 64 L 0 64 Z"/><path class="viz-line" d="M0 58 C 20 54, 35 48, 50 42 S 80 28, 110 8"/></svg>
+              <span><strong>Cumulative trend</strong><span class="mini__sub"><span class="ms" aria-hidden="true">wand_stars</span>Steady climb, fastest in recent weeks</span></span>
+            </button></li>
+            <li><button class="mini" type="button" data-chart="Week-over-week change" data-metric="Metric B" data-window="Last 8 weeks" data-insight="Mostly steady; week 6 dipped 3% and recovered the following week.">
+              <svg viewBox="0 0 110 64" aria-hidden="true"><rect class="viz-bar" x="2" y="30" width="10" height="34" rx="2"/><rect class="viz-bar--alt viz-bar" x="16" y="22" width="10" height="42" rx="2"/><rect class="viz-bar" x="30" y="26" width="10" height="38" rx="2"/><rect class="viz-bar--alt viz-bar" x="44" y="18" width="10" height="46" rx="2"/><rect class="viz-bar" x="58" y="24" width="10" height="40" rx="2"/><rect class="viz-bar--alt viz-bar" x="72" y="38" width="10" height="26" rx="2"/><rect class="viz-bar" x="86" y="20" width="10" height="44" rx="2"/><rect class="viz-bar--alt viz-bar" x="100" y="16" width="10" height="48" rx="2"/></svg>
+              <span><strong>Week-over-week change</strong><span class="mini__sub"><span class="ms" aria-hidden="true">wand_stars</span>One dip, quickly recovered</span></span>
+            </button></li>
+            <li><button class="mini" type="button" data-chart="Category mix" data-metric="Metric C" data-window="This quarter" data-insight="Category 1 is 46% of the total, up from 41% last quarter.">
+              <svg viewBox="0 0 110 64" aria-hidden="true"><circle class="viz-track" cx="55" cy="32" r="24"/><circle class="viz-arc" cx="55" cy="32" r="24" stroke-dasharray="69 151" transform="rotate(-90 55 32)"/><circle class="viz-arc viz-arc--2" cx="55" cy="32" r="24" stroke-dasharray="40 151" stroke-dashoffset="-73" transform="rotate(-90 55 32)"/></svg>
+              <span><strong>Category mix</strong><span class="mini__sub"><span class="ms" aria-hidden="true">wand_stars</span>One category gaining share</span></span>
+            </button></li>
+          </ul>
+        </div>
+        <p class="cs-note">Illustration: simplified template and sample data. Click a chart to see its insight.</p>
+      </div>
+    </section>
+
+    <section class="cs-section cs-section--alt">
+      <div class="container">
+        <header class="cs-head">
+          <p class="eyebrow reveal"><span>05</span>What I did</p>
+          <h2 class="reveal">Step by <em>step</em></h2>
+          <p class="reveal">The work, from raw tables to AI features, in the order it was built.</p>
+        </header>
+        <ol class="steps">
+          <li class="step reveal" style="--d: 0.00s">
+            <span class="step__icon" aria-hidden="true"><span class="ms">functions</span></span>
+            <span class="step__n">Step 01</span>
+            <strong>Modeled the data</strong>
+            <span class="step__text">SQL tables and complex metric calculations, including cumulative metrics via array functions</span>
+          </li>
+          <li class="step reveal" style="--d: 0.08s">
+            <span class="step__icon" aria-hidden="true"><span class="ms">event_repeat</span></span>
+            <span class="step__n">Step 02</span>
+            <strong>Automated refreshes</strong>
+            <span class="step__text">Week-on-week snapshotted data, refreshed without manual work</span>
+          </li>
+          <li class="step reveal" style="--d: 0.16s">
+            <span class="step__icon" aria-hidden="true"><span class="ms">dashboard</span></span>
+            <span class="step__n">Step 03</span>
+            <strong>Built the dashboards</strong>
+            <span class="step__text">Interactive views for real-time KPI tracking that replaced spreadsheets</span>
+          </li>
+          <li class="step reveal" style="--d: 0.24s">
+            <span class="step__icon" aria-hidden="true"><span class="ms">smart_toy</span></span>
+            <span class="step__n">Step 04</span>
+            <strong>Added an AI chatbot</strong>
+            <span class="step__text">Plain-language questions about the data and the dashboard</span>
+          </li>
+          <li class="step reveal" style="--d: 0.32s">
+            <span class="step__icon" aria-hidden="true"><span class="ms">wand_stars</span></span>
+            <span class="step__n">Step 05</span>
+            <strong>Shipped AI insights</strong>
+            <span class="step__text">One reusable prompt template explains what each chart shows</span>
+          </li>
+        </ol>
+        <ul class="chips-row reveal" aria-label="Tools and techniques"><li>SQL</li><li>Array functions</li><li>Data modeling</li><li>Dashboards</li><li>Generative AI</li><li>Prompt engineering</li></ul>
+      </div>
+    </section>
+
+    <nav class="container cs-next" aria-label="More projects">
+      <a class="cs-next__card" href="enterprise-analytics-qa.html">
+        <span class="cs-next__kicker">Next project <span class="ms" aria-hidden="true">arrow_forward</span></span>
+        <strong>Enterprise Analytics: Functional &amp; QA</strong>
+        <span>Global heavy-equipment manufacturer</span>
+      </a>
+      <a class="cs-next__home" href="../index.html#projects"><span class="ms" aria-hidden="true">arrow_back</span>Back to all projects</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Elanaliina Elanchezhiyan</p>
+      <p class="footer-note">Client names are kept confidential. Visuals marked as illustrations use sample data.</p>
+      <a class="to-top" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <dialog class="palette" id="palette" aria-label="Command palette">
+    <div class="palette__search">
+      <span class="ms" aria-hidden="true">search</span>
+      <input id="palette-input" type="text" placeholder="Jump to a section, open a project, switch theme…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list" aria-label="Search commands">
+      <kbd>esc</kbd>
+    </div>
+    <ul class="palette__list" id="palette-list" role="listbox" aria-label="Commands"></ul>
+    <p class="palette__foot"><span><kbd>↑</kbd> <kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> select</span><span><kbd>esc</kbd> close</span></p>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
