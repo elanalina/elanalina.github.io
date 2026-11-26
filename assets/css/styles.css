@@ -1375,8 +1375,10 @@ html:not(.js) .squiggle path { stroke-dashoffset: 0; animation: none; }
   .js .reveal { opacity: 1; translate: none; transition: none; }
   *, *::before, *::after {
     animation-duration: .001ms !important;
+    animation-delay: 0s !important;
     animation-iteration-count: 1 !important;
     transition-duration: .001ms !important;
+    transition-delay: 0s !important;
   }
   .squiggle path { stroke-dashoffset: 0; }
 }
