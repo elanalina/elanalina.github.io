@@ -21,6 +21,7 @@ Plain HTML, CSS and vanilla JavaScript: no build step, no frameworks, no tracker
 ```
 index.html            page content (all sections)
 projects/*.html       visual case-study pages, one per project
+Elanaliina_Elanchezhiyan_Resume.pdf  100% ATS-compatible single-page résumé PDF
 404.html              custom "relation does not exist" page
 assets/css/styles.css design tokens (colors, type, spacing) + styles
 assets/js/data.js     tables behind the SQL console (edit these!)

@@ -588,6 +588,7 @@
       },
       { id: 'copy', label: 'Copy my email address', group: 'contact', icon: 'content_copy', keys: 'clipboard mail', run: function () { copyEmail(null); } },
       { id: 'mail', label: 'Write me an email', group: 'contact', icon: 'mail', keys: 'send message', run: function () { window.location.href = 'mailto:' + EMAIL; } },
+      { id: 'resume', label: 'Open résumé (PDF)', group: 'link', icon: 'description', keys: 'cv download ats pdf', run: function () { window.open(ROOT + 'Elanaliina_Elanchezhiyan_Resume.pdf', '_blank', 'noopener'); } },
       { id: 'linkedin', label: 'Open LinkedIn', group: 'link', icon: 'arrow_outward', keys: 'profile social', run: function () { window.open(LINKEDIN, '_blank', 'noopener'); } },
       { id: 'github', label: 'Open GitHub', group: 'link', icon: 'arrow_outward', keys: 'code repos source', run: function () { window.open(GITHUB, '_blank', 'noopener'); } },
     ];
